@@ -22,6 +22,21 @@ I've not used the other grids in the list above, but the code used here for Tabu
 
 > Warning: JavaScript ahead! To use a client-side grid you're going to need to do some client-side work. That means JavaScript. This article doesn't attempt to teach any JavaScript. If you're not up to speed with JavaScript (and modern Web developers need to be!), take a look at [Web Bos's free 30 day JavaScript coding challenge.](https://javascript30.com/) This is a great introduction to many quick JavaScript concepts. If you like what you see there Wes has many other courses for sale that are highly recommended. (Disclaimer: we are in no way affilated with Wes Bos&mdash;if you google 'learn JavaScrip't you can find many other resources).
 
+### Folder conventions 
+
+| Folder           | Description                                |
+|------------------|------------------------------------------|
+| /App_Code        | ASP.NET folder for app classes           |
+| /assets          | Top-level folder for JavaScript, CSS, Images  |
+| /assets/css      | CSS folder                               |
+| /assets/images   | Images folder                            |
+| /assets/js       | Javascript folder                        |
+| /assets/js/pages&nbsp;&nbsp;&nbsp;&nbsp;    | page-specific JavaScript folder          |
+| /assets/vendors  | third-party JavaScript folder            |
+| /Bin             | ASP.NET Bin folder                       |
+| /docs            | app documentation folder                 |
+| /views           | views folder (all ASPX pages here)       |
+
 ### Getting to it
 
 There are four basic steps to populating Tabulator: 
