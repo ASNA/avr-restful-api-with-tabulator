@@ -1,0 +1,31 @@
+﻿Using System
+
+BegClass Index Partial(*Yes) Access(*Public) Extends(System.Web.UI.Page)
+
+    BegSr Page_Load Access(*Private) Event(*This.Load)
+        DclSrParm sender Type(*Object)
+        DclSrParm e Type(System.EventArgs)
+
+        *This.Title = 'RESTful API'
+
+        If (NOT Page.IsPostBack)
+            //
+            // Called the first time that the page is loaded.
+            //
+        Else
+            //
+            // Called subsequent times that the page is displayed.
+            //
+        EndIf
+    EndSr
+
+    BegSr Page_Unload Access(*Private) Event(*This.Unload)
+        DclSrParm sender Type(*Object)
+        DclSrParm e Type(System.EventArgs)
+
+        //
+        // Called when the page is unloaded.
+        //
+    EndSr
+
+EndClass

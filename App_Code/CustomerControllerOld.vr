@@ -1,0 +1,98 @@
+﻿//Using System
+//Using System.Collections.Generic
+//
+//// An example controller.
+//BegClass CustomerController Access(*Public) Extends(ASNA.JsonRestRouting.Controller)
+//
+//    // Example ShowAction method. 
+//    BegFunc ShowAction Access(*Public) Type(CustomerEntity) 
+//        DclSrParm Id Type(*Integer4) 
+//
+//        // This method hardcodes a customer lookup. In production, you'd use the given Id value 
+//        // to look up the exact customer number. 
+//
+//        DclFld Entity Type(CustomerEntity) New()
+//        Entity.CMCustNo = Convert.ToInt32(Id)
+//        Entity.CMName = 'Neil Young'
+//        Entity.CMAddr1 = 'Broken Arrow'
+//        Entity.CMCity = 'Santa Cruz'
+//        Entity.CMState = 'CA'
+//        Entity.CMCntry = 'US'
+//        Entity.CMPostCode = '95603'
+//        Entity.CMPhone = '(831) 205-3345'
+//        Entity.CMFax  = 8312053346
+//        Entity.CMActive = '1'
+//
+//        // The ASNA.JsonRestRouting router implicitly maps the return type to Json. 
+//        LeaveSr Entity 
+//    EndFunc        
+//
+//    BegFunc ListAction Access(*Public) Type(CustomerEntity) Rank(1) 
+//
+//        DclFld EntityList Type(List(*Of CustomerEntity)) New()
+//
+//        // This method hardcodes customer list creation. In production, you'd loop over rows
+//        // in a file.
+//
+//        DclFld Entity Type(CustomerEntity) 
+//
+//        Entity = *New CustomerEntity()
+//        Entity.CMCustNo = 1
+//        Entity.CMName = 'Neil Young'
+//        Entity.CMAddr1 = 'Broken Arrow'
+//        Entity.CMCity = 'Santa Cruz'
+//        Entity.CMState = 'CA'
+//        Entity.CMCntry = 'US'
+//        Entity.CMPostCode = '95603'
+//        Entity.CMPhone = '(831) 205-3345'
+//        Entity.CMFax  = 8312053346
+//        Entity.CMActive = '1'
+//        EntityList.Add(Entity) 
+//
+//        Entity = *New CustomerEntity()
+//        Entity.CMCustNo = 2
+//        Entity.CMName = 'Warren Zevon'
+//        Entity.CMAddr1 = 'Heaven Lane'
+//        Entity.CMCity = 'Big Sky'
+//        Entity.CMState = 'ET'
+//        Entity.CMCntry = 'US'
+//        Entity.CMPostCode = '00001'
+//        Entity.CMPhone = '(800) 205-3345'
+//        Entity.CMFax  = 8002053346
+//        Entity.CMActive = '0'
+//        EntityList.Add(Entity) 
+//
+//        Entity = *New CustomerEntity()
+//        Entity.CMCustNo = 3
+//        Entity.CMName = 'Van Morrison'
+//        Entity.CMAddr1 = 'Mystic Avenue'
+//        Entity.CMCity = 'Belfast'
+//        Entity.CMState = 'ET'
+//        Entity.CMCntry = 'Ireland'
+//        Entity.CMPostCode = '234-002'
+//        Entity.CMPhone = '21-465-9123'
+//        Entity.CMFax  = 0
+//        Entity.CMActive = '1'
+//        EntityList.Add(Entity) 
+//
+//
+//        // The ASNA.JsonRestRouting router implicitly maps the return type to Json. 
+//        LeaveSr EntityList.ToArray() 
+//    EndFunc        
+//
+//
+//EndClass
+//
+//// Example entity class. 
+//BegClass CustomerEntity Access(*Public)
+//    DclProp CMCustNo    Type(*Integer4) Access(*Public)
+//    DclProp CMName      Type(*String) Access(*Public)
+//    DclProp CMAddr1     Type(*String) Access(*Public)
+//    DclProp CMCity      Type(*String) Access(*Public)
+//    DclProp CMState     Type(*String) Access(*Public)
+//    DclProp CMCntry     Type(*String) Access(*Public)
+//    DclProp CMPostCode  Type(*String) Access(*Public)
+//    DclProp CMActive    Type(*String) Access(*Public)
+//    DclProp CMFax       Type(*Packed) Len(9,0) Access(*Public)
+//    DclProp CMPhone     Type(*String) Access(*Public)
+//EndClass

@@ -1,0 +1,57 @@
+﻿/* Sticky footer styles
+-------------------------------------------------- */
+
+:root {
+  --footer-height: 45px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: var(--footer-height);
+}
+
+code {
+    background-color: #F0F0F0 !important;
+    color: black;
+    border: 1px solid darkgray !important;
+    padding: 1px 3px 1px 3px !important; 
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+header.space-after {
+    padding-bottom: 3rem;
+}
+
+.space-before {
+    padding-top: 3rem;
+}
+
+.footer {
+  height: var(--footer-height);
+  line-height: var(--footer-height); /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}

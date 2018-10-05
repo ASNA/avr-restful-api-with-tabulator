@@ -1,0 +1,69 @@
+﻿Using System
+Using System.Collections.Generic
+
+BegClass CustomerController Access(*Public) Extends(ASNA.JsonRestRouting.Controller)
+
+    DclDB pgmDB DBName( "*PUBLIC/DG Net Local" )
+
+    DclDiskFile  CustomerByName +
+            Type( *Input  ) +
+            Org( *Indexed ) +
+            Prefix( Customer_ ) +
+            File( "Examples/CMastNewL2" ) +
+            DB( pgmDB ) +
+            ImpOpen( *No )
+
+    // Example ShowAction method. 
+    BegFunc ListAction Access(*Public) Type(CustomerEntity) Rank(1) 
+        DclFld EntityList Type(List(*Of CustomerEntity)) New()
+        DclFld Entity Type(CustomerEntity) 
+
+        Connect pgmDB
+        Open CustomerByName
+
+        Read CustomerByName
+        DoWhile NOT CustomerByName.IsEof()
+            Entity = PopulateCustomerEntity()
+            EntityList.Add(Entity)
+            Read CustomerByName
+        EndDo
+
+        Close CustomerByName 
+        Disconnect pgmDB 
+
+        // The ASNA.JsonRestRouting router implicitly maps the return type to Json. 
+        LeaveSr EntityList.ToArray() 
+    EndFunc        
+
+    BegFunc PopulateCustomerEntity Type(CustomerEntity)
+        DclFld Entity Type(CustomerEntity) New()
+
+        Entity.CMCustNo    = *This.Customer_CMCustNo
+        Entity.CMName      = *This.Customer_CMName.Trim()
+        Entity.CMAddr1     = *This.Customer_CMAddr1.Trim()
+        Entity.CMCity      = *This.Customer_CMCity.Trim()
+        Entity.CMState     = *This.Customer_CMState.Trim()
+        Entity.CMCntry     = *This.Customer_CMCntry.Trim()
+        Entity.CMPostCode  = *This.Customer_CMPostCode.Trim()
+        Entity.CMActive    = *This.Customer_CMActive
+        Entity.CMFax       = *This.Customer_CMFax
+        Entity.CMPhone     = *This.Customer_CMPhone.Trim()
+
+        LeaveSr Entity
+    EndFunc
+
+EndClass
+
+// Example entity class. 
+BegClass CustomerEntity Access(*Public)
+    DclProp CMCustNo    Type(*Integer4) Access(*Public)
+    DclProp CMName      Type(*String) Access(*Public)
+    DclProp CMAddr1     Type(*String) Access(*Public)
+    DclProp CMCity      Type(*String) Access(*Public)
+    DclProp CMState     Type(*String) Access(*Public)
+    DclProp CMCntry     Type(*String) Access(*Public)
+    DclProp CMPostCode  Type(*String) Access(*Public)
+    DclProp CMActive    Type(*String) Access(*Public)
+    DclProp CMFax       Type(*Packed) Len(9,0) Access(*Public)
+    DclProp CMPhone     Type(*String) Access(*Public)
+EndClass
