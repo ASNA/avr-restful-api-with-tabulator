@@ -169,6 +169,8 @@ AVR controller references:
 
 #### Step 4. The JavaScript. 
 
+If you're not familiar with JavaScript, the JavaScript included here may seem a little daunting. But taken a chunk at a time you'll notice that any one chunk isn't doing very much. Much of the code is declaring the Tabulator grid; there is only about 15 lines of execuatable JavaScript you need to get your arms around. 
+
 The JavaScript below is split into six chunks. Here is what each chunk is doing:
 
 * **Chunk 1. Set strict mode.** This line sets JavaScript's "strict" mode on. Using [strict mode](https://goo.gl/vVS7Or) helps avoid many JavaScript errors. Using strict mode in *all* of your JavaScript is highly recommended. 
